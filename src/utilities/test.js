@@ -1,2 +1,0 @@
-reason = "element (\"android=new UiSelector().resodasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssfdfffffrfrgegergergggerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrhjyyyyhhjjjjjjjjjjjuuuuuuuuuuuuuuuusaaadsaddasdddurceId(\"org.wikipedia.alpha:id/search_src_text\")\") still not displayed after 30000ms"
-console.log(reason.replace(/[^a-zA-Z0-9.]/g, " ").substring(0, 255));
