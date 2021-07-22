@@ -1,0 +1,44 @@
+{
+  "name": "browserstack-examples-mutiplatform-wdio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean-reports": "rm -rf mochawesome-report",
+    "generateMochawesome": "marge mochawesome-report/wdio-ma-merged.json --reportTitle 'WebdriverIO Boilerplate Results'",
+    "bstack-parallel": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-parallel.conf.js; npm run generateMochawesome",
+    "bstack-local-parallel": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-parallel.conf.js; npm run generateMochawesome",
+    "bstack-parallel-app": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-parallel-app.conf.js; npm run generateMochawesome",
+    "bstack-multiremote": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-multiremote.conf.js; npm run generateMochawesome",
+    "bstack-local-multiremote": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-multiremote.conf.js; npm run generateMochawesome",
+    "bstack-single": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-single.conf.js; npm run generateMochawesome",
+    "bstack-local-single": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-single.conf.js; npm run generateMochawesome",
+    "postinstall": "npx patch-package"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^7.7.8",
+    "@wdio/local-runner": "^7.7.8",
+    "@wdio/mocha-framework": "^7.7.7",
+    "@wdio/spec-reporter": "^7.7.7",
+    "browserstack-local": "1.4.8",
+    "chai": "4.3.4",
+    "lodash": "4.17.21",
+    "mocha-parallel-tests": "^2.3.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-report-generator": "3.1.5",
+    "wdio-mochawesome-reporter": "^4.0.0",
+    "webdriverio": "7.7.8"
+  },
+  "dependencies": {
+    "patch-package": "^6.4.7",
+    "wdio-html-nice-reporter": "^7.7.14",
+    "wdio-mochawesome-reporter": "4.0.0"
+  },
+  "mocha": {
+    "timeout": 120000,
+    "reporter": "mochawesome"
+  }
+}

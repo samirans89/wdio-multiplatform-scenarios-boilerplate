@@ -1,0 +1,37 @@
+{
+  "androidApp": {
+    "caps": {
+      "platformName": "android",
+      "appium:app": "WikipediaSample",
+      "appium:deviceName": "Samsung Galaxy S20"
+    },
+    "bstackCaps": {
+      "osVersion": "10.0",
+      "realMobile": "true",
+      "appiumVersion": "1.21.0"
+    }
+  },
+  "androidChrome": {
+    "caps": {
+      "browserName": "android"
+    },
+    "bstackCaps": {
+      "osVersion": "10.0",
+      "realMobile": "true",
+      "appiumVersion": "1.21.0",
+      "deviceName" : "Samsung Galaxy S20"
+    }
+  },
+  "chrome": {
+    "caps": {
+      "browserName": "chrome",
+      "browserVersion": "89"
+    }
+  },
+  "firefox": {
+    "caps": {
+      "browserName": "firefox",
+      "browserVersion": "89"
+    }
+  }
+}
