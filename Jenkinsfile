@@ -55,10 +55,7 @@ bstack-parallel-app''',
                 withEnv(['BROWSERSTACK_USERNAME=' + user]) {
                     sh label: '', returnStatus: true, script: '''#!/bin/bash -l
                                                                 cd test
-<<<<<<< HEAD
                                                                 npm install
-=======
->>>>>>> 0eebb5c4862396960c70bdee2379f9985867bd23
                                                                 npm run ${TEST_TYPE}
                                                                 '''
                 }
