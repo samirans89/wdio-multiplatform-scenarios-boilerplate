@@ -16,10 +16,10 @@
       "browserName": "android"
     },
     "bstackCaps": {
-      "osVersion": "10.0",
+      "osVersion": "9.0",
       "realMobile": "true",
       "appiumVersion": "1.21.0",
-      "deviceName" : "Samsung Galaxy S20"
+      "deviceName" : "Samsung Galaxy S10"
     }
   },
   "chrome": {

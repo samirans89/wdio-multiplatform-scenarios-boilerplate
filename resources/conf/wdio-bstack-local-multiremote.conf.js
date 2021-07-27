@@ -23,8 +23,7 @@ var overrides = {
         "bstack:options": {
           osVersion: "11.0",
           deviceName: "Google Pixel 5",
-          realMobile: "true",
-          idleTimeout: 300,
+          realMobile: "true"
         },
       },
     },
@@ -34,8 +33,7 @@ var overrides = {
         browserVersion: "89.0",
         "bstack:options": {
           os: "Windows",
-          osVersion: "7",
-          idleTimeout: 300,
+          osVersion: "7"
         },
       },
     },
@@ -43,12 +41,11 @@ var overrides = {
       capabilities: {
         platformName: "android",
         "appium:app": "WikipediaSample",
-        "appium:deviceName": "Samsung Galaxy S20",
+        "appium:deviceName": "Samsung Galaxy S10",
         "bstack:options": {
-          osVersion: "10.0",
+          osVersion: "9.0",
           realMobile: "true",
           appiumVersion: "1.21.0",
-          idleTimeout: 300,
         },
       },
     },
@@ -60,8 +57,7 @@ var overrides = {
         "bstack:options": {
           osVersion: "12.0",
           realMobile: "true",
-          appiumVersion: "1.21.0",
-          idleTimeout: 300,
+          appiumVersion: "1.21.0"
         },
       },
     },
