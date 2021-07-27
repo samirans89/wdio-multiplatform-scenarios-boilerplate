@@ -35,7 +35,6 @@ const test1 = async (title, wdioBrowser) => {
     await helper.updateTestStatus(browser, "failed", e.message);
     throw new Error(e);
   } finally {
-    console.log("Browser config: " + browser.config);
     if (
       !wdioBrowser ||
       (wdioBrowser &&

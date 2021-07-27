@@ -5,7 +5,6 @@ describe("Google Search Functionality", () => {
   })
 
   it(`should be able to search on Bing Engine`, async () => {
-      console.log(await browser)
       const q = await $('//input[@name=\"q\"]');
       await q.setValue("BrowserStack\n");
       await browser.pause(1000);

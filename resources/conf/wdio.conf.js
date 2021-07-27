@@ -6,7 +6,7 @@ exports.config = {
   logLevel: "trace",
   coloredLogs: true,
   bail: 0,
-  baseUrl: "https://bstackdemo.com/",
+  baseUrl: "",
   waitforTimeout: 10000,
   connectionRetryTimeout: 120000,
   connectionRetryCount: 1,

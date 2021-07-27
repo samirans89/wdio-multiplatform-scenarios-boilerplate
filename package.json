@@ -1,7 +1,7 @@
 {
-  "name": "browserstack-examples-mutiplatform-wdio",
+  "name": "browserstack-examples-multiplatform-wdio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Multi-platform scenario examples using WDIO",
   "main": "index.js",
   "scripts": {
     "clean-reports": "rm -rf mochawesome-report",
@@ -11,13 +11,14 @@
     "bstack-parallel-app": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-parallel-app.conf.js; npm run generateMochawesome",
     "bstack-multiremote": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-multiremote.conf.js; npm run generateMochawesome",
     "bstack-local-multiremote": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-multiremote.conf.js; npm run generateMochawesome",
+    "bstack-wdio-standalone": "npx mocha --parallel --jobs 5  src/multiplatform_scenarios/standalone/*.js",
     "bstack-single": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-single.conf.js; npm run generateMochawesome",
     "bstack-local-single": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-single.conf.js; npm run generateMochawesome",
     "postinstall": "npx patch-package"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["Multi-platform", "multiremote", "standalone-wdio"],
+  "author": "Samiran Saha",
+  "license": "MIT",
   "devDependencies": {
     "@wdio/cli": "^7.7.8",
     "@wdio/local-runner": "^7.7.8",

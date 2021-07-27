@@ -6,7 +6,6 @@ const test1 = async (title, wdioBrowser) => {
   let helper = new Helper();
   try {
     if (!wdioBrowser) {
-      console.log("WDIO Test runner browser is null");
       browser = await helper.createPlatformInstance(browserConf.chrome.caps);
     } else {
       browser = wdioBrowser;

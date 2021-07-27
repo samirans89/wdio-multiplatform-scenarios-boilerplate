@@ -4,6 +4,8 @@ const d3m1 = require("../../tests/web/domain3/module1");
 const d4m1 = require("../../tests/app/domain4/module1");
 
 describe("E2E Scenario A", function () {
+
+  // No webview context is found. Test is expected to fail.
   it("can find search results on android chrome and app", async function () {
     try {
       await browser.waitUntil(
@@ -19,7 +21,7 @@ describe("E2E Scenario A", function () {
     try {
       await browser.keys(["Enter"]);
     } catch (error) {
-      console.log("An error occurred while starting app.");
+      console.log("An error occurred while sending keys.");
     }
 
     const webView = await browser.$("//android.webkit.WebView");
@@ -30,7 +32,8 @@ describe("E2E Scenario A", function () {
     await browser.waitUntil(
       async () => (await browser.getContexts()).length > 1
     );
-
+    
+    // no webview context is found for Firefox. Test would fail. 
     await browser.switchContext("WEBVIEW_firefox");
     await d3m1.test1(this.test.fullTitle(), browser);
 

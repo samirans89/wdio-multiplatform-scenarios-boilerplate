@@ -41,7 +41,7 @@ const test1 = async (title, ...wdioBrowser) => {
     const responseElement = await browser2.$("You are logged in as alice");
     responseElement.waitForDisplayed();
     const response = await responseElement.getText();
-    assert(response.includes("You are logged in as alice"));
+    assert(response.includes("Intentional incorrect assertion => You are logged in as Bob"));
 
     await helper.updateTestStatus(browser1, "passed", "test successful");
     await helper.updateTestStatus(browser2, "passed", "test successful");
