@@ -1,5 +1,6 @@
 import org.jenkinsci.plugins.pipeline.modeldefinition.Utils
 import groovy.json.JsonSlurperClassic
+
 node {
     try {
         properties([
@@ -21,7 +22,10 @@ node {
                 ]
             ]),
             parameters([
-                credentials(credentialType: 'com.browserstack.automate.ci.jenkins.BrowserStackCredentials', defaultValue: 'samiran11', description: 'Select your BrowserStack Username', name: 'BROWSERSTACK_USERNAME', required: true),
+                credentials(credentialType: 'com.browserstack.automate.ci.jenkins.BrowserStackCredentials',
+                defaultValue: 'samiran11', description: 'Select your BrowserStack Username',
+                name: 'BROWSERSTACK_USERNAME',
+                required: true),
                 [$class: 'ExtensibleChoiceParameterDefinition',
                 choiceListProvider: [
                     $class: 'TextareaChoiceListProvider',
@@ -40,7 +44,8 @@ bstack-parallel-app''',
         stage('Pull from Github') {
             def branch = 'main'
             dir('test') {
-                git branch: "${branch}", changelog: false, poll: false, url: 'https://github.com/samirans89/wdio-multiplatform-scenarios-boilerplate.git'
+                git branch: "${branch}", changelog: false, poll: false,
+                url: 'https://github.com/samirans89/wdio-multiplatform-scenarios-boilerplate.git'
             }
         }
         stage('Run Test') {
@@ -50,7 +55,7 @@ bstack-parallel-app''',
                     user = user.substring(0, user.lastIndexOf('-'))
                 }
                 if (!params.TEST_TYPE) {
-                    env.TEST_TYPE = "bstack-wdio-standalone"
+                    env.TEST_TYPE = 'bstack-wdio-standalone'
                 }
                 withEnv(['BROWSERSTACK_USERNAME=' + user]) {
                     sh label: '', returnStatus: true, script: '''#!/bin/bash -l
@@ -60,6 +65,11 @@ bstack-parallel-app''',
                                                                 '''
                 }
             }
+        }
+
+        stage('Generate Reports') {
+            browserStackReportPublisher 'automate'
+            browserStackReportPublisher 'app-automate'
         }
     } catch (e) {
         currentBuild.result = 'FAILURE'
