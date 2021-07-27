@@ -20,7 +20,8 @@ var overrides = {
       debug: true,
       video: true,
       networkLogs: true,
-      maskCommands: "setValues, getValues, setCookies, getCookies"
+      maskCommands: "setValues, getValues, setCookies, getCookies",
+      appiumVersion: "1.21.0"
     },
   },
   maxInstances: 5,
@@ -28,10 +29,10 @@ var overrides = {
     {
       platformName: "android",
       "appium:app": "WikipediaSample",
-      "appium:deviceName": "Samsung Galaxy S10",
+      "appium:deviceName": "Samsung Galaxy S20",
       "appium:acceptSslCerts": true,
       "bstack:options": {
-        osVersion: "9.0",
+        osVersion: "10.0",
         realMobile: "true",
         local: "false",
       },

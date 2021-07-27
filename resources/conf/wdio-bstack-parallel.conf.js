@@ -22,6 +22,7 @@ var overrides = {
       video: true,
       networkLogs: true,
       maskCommands: "setValues, getValues, setCookies, getCookies",
+      appiumVersion: "1.21.0",
       local: "false",
     },
   },
