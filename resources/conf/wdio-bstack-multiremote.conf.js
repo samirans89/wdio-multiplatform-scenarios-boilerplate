@@ -22,8 +22,7 @@ var overrides = {
         "bstack:options": {
           osVersion: "11.0",
           deviceName: "Google Pixel 5",
-          realMobile: "true",
-          idleTimeout: 300,
+          realMobile: "true"
         },
       },
     },
@@ -33,8 +32,7 @@ var overrides = {
         browserVersion: "89.0",
         "bstack:options": {
           os: "Windows",
-          osVersion: "7",
-          idleTimeout: 300,
+          osVersion: "7"
         },
       },
     },
@@ -47,8 +45,7 @@ var overrides = {
           osVersion: "10.0",
           realMobile: "true",
           local: "false",
-          appiumVersion: "1.21.0",
-          idleTimeout: 300,
+          appiumVersion: "1.21.0"
         },
       },
     },
@@ -61,8 +58,7 @@ var overrides = {
           osVersion: "12.0",
           realMobile: "true",
           local: "false",
-          appiumVersion: "1.21.0",
-          idleTimeout: 300,
+          appiumVersion: "1.21.0"
         },
       },
     },
