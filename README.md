@@ -109,9 +109,7 @@ Note:
 
 ## Running Your Tests
 
-### Run a specific test on BrowserStack
-
-In this section, we will run a single test on Chrome browser on Browserstack. To change test capabilities for this configuration, please refer to the `capabilities` object in `./resources/conf/wdio-bstack-single.conf.js` file.
+### Run automation tests on BrowserStack
 
 - How to run the test?
   
