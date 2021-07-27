@@ -44,7 +44,7 @@ bstack-parallel-app''',
             }
         }
         stage('Run Test') {
-            browserstack(credentialsId: "${params.BROWSERSTACK_USERNAME}"]) {
+            browserstack(credentialsId: "${params.BROWSERSTACK_USERNAME}") {
                 def user = "${env.BROWSERSTACK_USERNAME}"
                 if ( user.contains('-')) {
                     user = user.substring(0, user.lastIndexOf('-'))
