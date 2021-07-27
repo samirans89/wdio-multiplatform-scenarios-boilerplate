@@ -7,8 +7,7 @@
     },
     "bstackCaps": {
       "osVersion": "9.0",
-      "realMobile": "true",
-      "appiumVersion": "1.21.0"
+      "realMobile": "true"
     }
   },
   "androidChrome": {
@@ -18,7 +17,6 @@
     "bstackCaps": {
       "osVersion": "9.0",
       "realMobile": "true",
-      "appiumVersion": "1.21.0",
       "deviceName" : "Samsung Galaxy S10"
     }
   },
