@@ -44,8 +44,7 @@ var overrides = {
         "bstack:options": {
           osVersion: "9.0",
           realMobile: "true",
-          local: "false",
-          appiumVersion: "1.21.0"
+          local: "false"
         },
       },
     },
@@ -57,8 +56,7 @@ var overrides = {
         "bstack:options": {
           osVersion: "12.0",
           realMobile: "true",
-          local: "false",
-          appiumVersion: "1.21.0"
+          local: "false"
         },
       },
     },

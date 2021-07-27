@@ -44,8 +44,7 @@ var overrides = {
         "appium:deviceName": "Samsung Galaxy S10",
         "bstack:options": {
           osVersion: "9.0",
-          realMobile: "true",
-          appiumVersion: "1.21.0",
+          realMobile: "true"
         },
       },
     },
@@ -56,8 +55,7 @@ var overrides = {
         "appium:deviceName": "iPhone XS",
         "bstack:options": {
           osVersion: "12.0",
-          realMobile: "true",
-          appiumVersion: "1.21.0"
+          realMobile: "true"
         },
       },
     },
