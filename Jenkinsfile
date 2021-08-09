@@ -50,7 +50,7 @@ bstack-parallel-app''',
         }
         stage('Upload App') {
             dir('test') {
-                browserstackAppUploader('app/TheApp-v1.10.0.ipa') {
+                browserstackAppUploader('/var/lib/jenkins/workspace/REQ_SA_WDIO_Multiplatform_Scenarios/test/app/TheApp-v1.10.0.ipa') {
                 }
             }
         }
