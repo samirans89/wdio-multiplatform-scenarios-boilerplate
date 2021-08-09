@@ -48,6 +48,11 @@ bstack-parallel-app''',
                 url: 'https://github.com/samirans89/wdio-multiplatform-scenarios-boilerplate.git'
             }
         }
+        stage('Upload App') {
+            browserstackAppUploader('https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk') {
+    // some block
+}
+        }
         stage('Run Test') {
             browserstack(credentialsId: "${params.BROWSERSTACK_USERNAME}") {
                 def user = "${env.BROWSERSTACK_USERNAME}"
