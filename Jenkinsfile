@@ -74,8 +74,8 @@ bstack-parallel-app''',
         }
 
         stage('Generate Reports') {
-            browserStackReportPublisher 'automate'
             browserStackReportPublisher 'app-automate'
+            browserStackReportPublisher 'automate'
         }
     } catch (e) {
         currentBuild.result = 'FAILURE'
