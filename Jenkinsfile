@@ -49,9 +49,10 @@ bstack-parallel-app''',
             }
         }
         stage('Upload App') {
-            browserstackAppUploader('https://www.browserstack.com/app-automate/sample-apps/android/WikipediaSample.apk') {
-    // some block
-}
+            dir('test') {
+                browserstackAppUploader('app/TheApp-v1.10.0.ipa') {
+                }
+            }
         }
         stage('Run Test') {
             browserstack(credentialsId: "${params.BROWSERSTACK_USERNAME}") {
