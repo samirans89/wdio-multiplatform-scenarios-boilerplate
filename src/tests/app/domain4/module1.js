@@ -16,6 +16,7 @@ const test1 = async (title, wdioBrowser) => {
     }
     await helper.updateTestName(browser, title);
 
+    
     let searchSelector = await browser.$(`~Search Wikipedia`);
     await searchSelector.waitForDisplayed({ timeout: 30000 });
     await searchSelector.click();

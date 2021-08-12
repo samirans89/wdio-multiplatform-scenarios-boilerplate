@@ -66,7 +66,6 @@ bstack-parallel-app''',
                 withEnv(['BROWSERSTACK_USERNAME=' + user]) {
                     sh label: '', returnStatus: true, script: '''#!/bin/bash -l
                                                                 cd test
-                                                                export BROWSEERSTACK_APP_ID='dummy'
                                                                 npm install
                                                                 npm run ${TEST_TYPE}
                                                                 '''
@@ -75,6 +74,7 @@ bstack-parallel-app''',
         }
 
         stage('Generate Reports') {
+            browserStackReportPublisher 'automate'
             browserStackReportPublisher 'app-automate'
         }
     } catch (e) {

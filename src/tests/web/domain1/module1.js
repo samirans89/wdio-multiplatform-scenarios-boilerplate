@@ -1,7 +1,9 @@
 const Helper = require("../../../utilities/helper");
 const browserConf = require("./../../../../resources/data/standalone_browsers.json");
+const addContext = require("mochawesome/addContext");
+require("mochawesome/register");
 
-const test1 = async (title, wdioBrowser) => {
+const test1 = async function (mochaObj, title, wdioBrowser) {
   let browser;
   let helper = new Helper();
   try {
@@ -18,6 +20,7 @@ const test1 = async (title, wdioBrowser) => {
     const submitBtn = await browser.$("#search_button_homepage");
     await submitBtn.click();
     console.log(await browser.getTitle());
+    addContext(mochaObj, "more context within the test: " + await browser.getTitle());
     await helper.updateTestStatus(browser, "passed", "test successful");
   } catch (e) {
     await helper.updateTestStatus(browser, "failed", e.message);
