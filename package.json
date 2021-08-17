@@ -33,7 +33,7 @@
     "lodash": "4.17.21",
     "mocha-parallel-tests": "^2.3.0",
     "mochawesome": "^6.2.2",
-    "mochawesome-report-generator": "5.2.0",
+    "mochawesome-report-generator": "3.1.5",
     "wdio-mochawesome-reporter": "^4.0.0",
     "webdriverio": "7.7.8"
   },
