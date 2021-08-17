@@ -1,0 +1,91 @@
+diff --git a/node_modules/wdio-mochawesome-reporter/src/index.js b/node_modules/wdio-mochawesome-reporter/src/index.js
+index c3fb6e1..90b7faf 100644
+--- a/node_modules/wdio-mochawesome-reporter/src/index.js
++++ b/node_modules/wdio-mochawesome-reporter/src/index.js
+@@ -25,8 +25,7 @@ class WdioMochawesomeReporter extends WDIOReporter {
+         // mochawesome requires this root suite for HTML report generation to work properly
+         this.results = {
+             stats: new Stats(runner.start),
+-            suites: new Suite(true, {'title': ''}),
+-            copyrightYear: new Date().getFullYear()
++            results: [new Suite(true, {'title': ''})]
+         }
+     }
+ 
+@@ -62,7 +61,7 @@ class WdioMochawesomeReporter extends WDIOReporter {
+ 
+     onSuiteEnd (suite) {
+         this.currSuite.duration = suite.duration
+-        this.results.suites.addSuite(this.currSuite)
++        this.results.results[0].addSuite(this.currSuite)
+     }
+ 
+     onRunnerEnd (runner) {
+diff --git a/node_modules/wdio-mochawesome-reporter/src/mergeResults.js b/node_modules/wdio-mochawesome-reporter/src/mergeResults.js
+index 34760e8..815a23e 100644
+--- a/node_modules/wdio-mochawesome-reporter/src/mergeResults.js
++++ b/node_modules/wdio-mochawesome-reporter/src/mergeResults.js
+@@ -40,12 +40,12 @@ function mergeData (rawData) {
+             mergedResults.stats.testsRegistered += data.stats.testsRegistered
+             mergedResults.stats.skipped += data.stats.skipped
+             mergedResults.stats.hasSkipped = mergedResults.stats.skipped > 0
+-            mergedResults.stats.passPercent = mergedResults.stats.tests === 0 ? 0 : Math.round((mergedResults.stats.passes / mergedResults.stats.tests) * 100)
+-            mergedResults.stats.pendingPercent = mergedResults.stats.tests === 0 ? 0 : Math.round((mergedResults.stats.pending / mergedResults.stats.tests) * 100)
++            mergedResults.stats.passPercent = mergedResults.stats.tests === 0 ? 0 : (mergedResults.stats.passes / mergedResults.stats.tests) * 100
++            mergedResults.stats.pendingPercent = mergedResults.stats.tests === 0 ? 0 : (mergedResults.stats.pending / mergedResults.stats.tests) * 100
+ 
+             // add suites
+-            data.suites.suites.forEach(suite => {
+-                mergedResults.suites.suites.push(suite)
++            data.results[0].suites.forEach(suite => {
++                mergedResults.results[0].suites.push(suite)
+             })
+         }
+     })
+diff --git a/node_modules/wdio-mochawesome-reporter/src/stats.js b/node_modules/wdio-mochawesome-reporter/src/stats.js
+index b3ea4d3..ccf1ee4 100644
+--- a/node_modules/wdio-mochawesome-reporter/src/stats.js
++++ b/node_modules/wdio-mochawesome-reporter/src/stats.js
+@@ -15,8 +15,6 @@ module.exports = class {
+         this.hasOther = false
+         this.skipped = 0
+         this.hasSkipped = false
+-        this.passPercentClass = 'success'
+-        this.pendingPercentClass = 'danger'
+     }
+ 
+     incrementSuites () {
+@@ -36,7 +34,7 @@ module.exports = class {
+             this.hasSkipped = true
+         }
+ 
+-        this.passPercent = this.tests === 0 ? 0 : Math.round((this.passes / this.tests) * 100)
+-        this.pendingPercent = this.tests === 0 ? 0 : Math.round((this.pending / this.tests) * 100)
++        this.passPercent = this.tests === 0 ? 0 : (this.passes / this.tests) * 100
++        this.pendingPercent = this.tests === 0 ? 0 : (this.pending / this.tests) * 100
+     }
+ }
+diff --git a/node_modules/wdio-mochawesome-reporter/src/suite.js b/node_modules/wdio-mochawesome-reporter/src/suite.js
+index 45d2b8a..332db7c 100644
+--- a/node_modules/wdio-mochawesome-reporter/src/suite.js
++++ b/node_modules/wdio-mochawesome-reporter/src/suite.js
+@@ -12,7 +12,6 @@ module.exports = class {
+         this.failures = []
+         this.skipped = []
+         this.duration = 0
+-        this.rootEmpty = data.rootEmpty
+         this._timeout = 0
+         this.uuid = uuid()
+         this.beforeHooks = []
+diff --git a/node_modules/wdio-mochawesome-reporter/src/test.js b/node_modules/wdio-mochawesome-reporter/src/test.js
+index 6b9f8fb..e96b6e4 100644
+--- a/node_modules/wdio-mochawesome-reporter/src/test.js
++++ b/node_modules/wdio-mochawesome-reporter/src/test.js
+@@ -12,7 +12,6 @@ module.exports = class {
+         this.fail = false
+         this.pending = false
+         this.code = ''
+-        this.isRoot = false
+         this.uuid = uuid()
+         this.parentUUID = suiteUUID
+         this.skipped = false

@@ -1,5 +1,6 @@
 const Helper = require("../../../utilities/helper");
 var assert = require("assert");
+const { addContext } = require('wdio-mochawesome-reporter').default;
 
 const test1 = async (title, ...wdioBrowser) => {
   let browser1, browser2;
@@ -17,6 +18,12 @@ const test1 = async (title, ...wdioBrowser) => {
     const submitBtn = await browser1.$("#search_button_homepage");
     await submitBtn.click();
     console.log(await browser1.getTitle());
+    addContext({
+      title: 'addContext within test',
+      value: {
+        pageTitle: await browser1.getTitle() 
+      },
+    });
 
     const loginList = await browser2.$("~Login Screen");
     loginList.waitForDisplayed();
@@ -42,6 +49,12 @@ const test1 = async (title, ...wdioBrowser) => {
     responseElement.waitForDisplayed();
     const response = await responseElement.getText();
     assert(response.includes("Intentional incorrect assertion => You are logged in as Bob"));
+    addContext({
+      title: 'Unexpected output',
+      value: {
+        pageTitle: response
+      },
+    });
 
     await helper.updateTestStatus(browser1, "passed", "test successful");
     await helper.updateTestStatus(browser2, "passed", "test successful");

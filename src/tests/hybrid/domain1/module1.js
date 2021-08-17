@@ -1,5 +1,6 @@
 const Helper = require("../../../utilities/helper");
 var assert = require("assert");
+const { addContext } = require('wdio-mochawesome-reporter').default;
 
 const test1 = async (title, ...wdioBrowser) => {
   let browser1, browser2;
@@ -17,6 +18,12 @@ const test1 = async (title, ...wdioBrowser) => {
     const submitBtn = await browser1.$("#search_button_homepage");
     await submitBtn.click();
     console.log(await browser1.getTitle());
+    addContext({
+      title: 'addContext within test',
+      value: {
+        pageTitle: await browser1.getTitle() 
+      },
+    });
 
     let searchSelector = await browser2.$(`~Search Wikipedia`);
     await searchSelector.waitForDisplayed({ timeout: 30000 });
@@ -32,6 +39,12 @@ const test1 = async (title, ...wdioBrowser) => {
 
     let allProductsName = await browser2.$$(`android.widget.TextView`);
     assert(allProductsName.length > 0);
+    addContext({
+      title: 'addContext within test',
+      value: {
+        allProducts: allProductsName
+      },
+    });
 
     await helper.updateTestStatus(browser1, "passed", "test successful");
     await helper.updateTestStatus(browser2, "passed", "test successful");

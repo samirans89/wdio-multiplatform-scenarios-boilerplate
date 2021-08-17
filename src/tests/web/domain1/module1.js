@@ -20,6 +20,7 @@ const test1 = async function (mochaObj, title, wdioBrowser) {
     const submitBtn = await browser.$("#search_button_homepage");
     await submitBtn.click();
     console.log(await browser.getTitle());
+    
     addContext(mochaObj, "more context within the test: " + await browser.getTitle());
     await helper.updateTestStatus(browser, "passed", "test successful");
   } catch (e) {

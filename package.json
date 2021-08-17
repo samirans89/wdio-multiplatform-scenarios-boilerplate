@@ -11,7 +11,7 @@
     "bstack-parallel-app": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-parallel-app.conf.js; npm run generateMochawesome",
     "bstack-multiremote": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-multiremote.conf.js; npm run generateMochawesome",
     "bstack-local-multiremote": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-multiremote.conf.js; npm run generateMochawesome",
-    "bstack-wdio-standalone": "npx mocha --parallel --jobs 5  src/multiplatform_scenarios/standalone/*.js",
+    "bstack-wdio-standalone": "npm run clean-reports; npx mocha --parallel --jobs 5  src/multiplatform_scenarios/standalone/*.js",
     "bstack-single": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-single.conf.js; npm run generateMochawesome",
     "bstack-local-single": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-single.conf.js; npm run generateMochawesome",
     "postinstall": "npx patch-package"
