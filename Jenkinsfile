@@ -48,6 +48,12 @@ bstack-parallel-app''',
                 url: 'https://github.com/samirans89/wdio-multiplatform-scenarios-boilerplate.git'
             }
         }
+        stage('Upload App') {
+            dir('test') {
+                browserstackAppUploader('/var/lib/jenkins/workspace/REQ_SA_WDIO_Multiplatform_Scenarios/test/app/TheApp-v1.10.0.ipa') {
+                }
+            }
+        }
         stage('Run Test') {
             browserstack(credentialsId: "${params.BROWSERSTACK_USERNAME}") {
                 def user = "${env.BROWSERSTACK_USERNAME}"

@@ -3,7 +3,7 @@
     "caps": {
       "platformName": "android",
       "appium:app": "WikipediaSample",
-      "appium:deviceName": "Samsung Galaxy S10"
+      "appium:deviceName": "Samsung Galaxy S20"
     },
     "bstackCaps": {
       "osVersion": "9.0",

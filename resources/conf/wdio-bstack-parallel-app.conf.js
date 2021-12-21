@@ -28,10 +28,10 @@ var overrides = {
     {
       platformName: "android",
       "appium:app": "WikipediaSample",
-      "appium:deviceName": "Samsung Galaxy S10",
+      "appium:deviceName": "Samsung Galaxy S20",
       "appium:acceptSslCerts": true,
       "bstack:options": {
-        osVersion: "9.0",
+        osVersion: "10.0",
         realMobile: "true",
         local: "false",
       },

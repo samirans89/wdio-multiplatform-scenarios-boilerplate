@@ -16,7 +16,11 @@
     "bstack-local-single": "npm run clean-reports; npx wdio resources/conf/wdio-bstack-local-single.conf.js; npm run generateMochawesome",
     "postinstall": "npx patch-package"
   },
-  "keywords": ["Multi-platform", "multiremote", "standalone-wdio"],
+  "keywords": [
+    "Multi-platform",
+    "multiremote",
+    "standalone-wdio"
+  ],
   "author": "Samiran Saha",
   "license": "MIT",
   "devDependencies": {
@@ -34,9 +38,7 @@
     "webdriverio": "7.7.8"
   },
   "dependencies": {
-    "patch-package": "^6.4.7",
-    "wdio-html-nice-reporter": "^7.7.14",
-    "wdio-mochawesome-reporter": "4.0.0"
+    "patch-package": "^6.4.7"
   },
   "mocha": {
     "timeout": 120000,
