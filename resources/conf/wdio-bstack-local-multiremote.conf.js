@@ -35,7 +35,6 @@ var overrides = {
         "bstack:options": {
           os: "Windows",
           osVersion: "7",
-          idleTimeout: 300,
         },
       },
     },
@@ -48,7 +47,6 @@ var overrides = {
           osVersion: "10.0",
           realMobile: "true",
           appiumVersion: "1.21.0",
-          idleTimeout: 300,
         },
       },
     },
@@ -61,7 +59,6 @@ var overrides = {
           osVersion: "12.0",
           realMobile: "true",
           appiumVersion: "1.21.0",
-          idleTimeout: 300,
         },
       },
     },

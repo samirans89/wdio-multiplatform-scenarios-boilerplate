@@ -6,7 +6,7 @@
       "appium:deviceName": "Samsung Galaxy S20"
     },
     "bstackCaps": {
-      "osVersion": "10.0",
+      "osVersion": "9.0",
       "realMobile": "true"
     }
   },
